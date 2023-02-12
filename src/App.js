@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import Overview from "./components/Overview";
+import GenInfo from './components/GenInfo';
 import uniqid from "uniqid";
-import './styles/style.css';
+/* import './styles/style.css'; */
 
 class App extends Component {
   constructor () {
@@ -13,28 +13,36 @@ class App extends Component {
         id: uniqid()
       },
       names: [],
+    }
+      this.state = {
       city: {
         text: "",
         id: uniqid()
       },
       cities: [],
+    }
+      this.state = {
       mail: {
         text: "",
         id: uniqid(),
       },
       mails: [],
+    }
+      this.state = {
       born: {
         text: "",
         id: uniqid(),
       },
+    }
+      this.state = {
       dborn: [],
       phone: { 
         text:"",
         id: uniqid(),
       },
       phones: [],
-
-      datesstarted: {
+    }
+      /* datesstarted: {
         text: "",
         id: uniqid()
       },
@@ -81,7 +89,7 @@ class App extends Component {
       },
       tasks: [],
 
-    };
+    }; */
   }
   handleChangeF1 = (e) => {
     this.setState({
@@ -117,7 +125,7 @@ class App extends Component {
  
   };
   
-  onSubmitTask = (e) => {
+  onSubmitForm1 = (e) => {
     e.preventDefault();
     this.setState({
       name: this.state.names.concat(this.state.name),
@@ -159,19 +167,47 @@ class App extends Component {
 
 
   render() {
-    const {task, tasks} = this.state
+    const {name, city, mail, born, phone} = this.state
     return (
       <div>
-        <form onSubmit={this.onSubmitTask}>
-          <label htmlFor="taskInput">Enter Task</label>
+        <form onSubmit={this.onSubmitForm1}>
+          <label htmlFor="nameInput">Nombre y apellido</label>
           <input
-            onChange={this.handleChange}
-            value={task.text}
+            onChange={this.handleChangeF1}
+            value={name.text}
             type="text"
-            id="taskInput"
+            id="nameInput"
+          />
+          <label htmlFor="cityInput">Ciudad de residencia</label>
+          <input
+            onChange={this.handleChangeF1}
+            value={city.text}
+            type="text"
+            id="cityInput"
+          />
+          <label htmlFor="mailInput">Dirección de Email</label>
+          <input
+            onChange={this.handleChangeF1}
+            value={mail.text}
+            type="mail"
+            id="mailInput"
+          />
+          <label htmlFor="bornInput">Fecha de nacimiento</label>
+          <input
+            onChange={this.handleChangeF1}
+            value={born.text}
+            type="date"
+            id="bornInput"
+          />
+          <label htmlFor="phoneInput">Número telefónico</label>
+          <input
+            onChange={this.handleChangeF1}
+            value={phone.text}
+            type="number"
+            id="phoneInput"
           />
           <button type="submit">
-            Add task
+            Agregue esta sección
           </button>  
         </form>
 
@@ -182,7 +218,14 @@ class App extends Component {
 
 
 
-        <Overview tasks={tasks} />
+        <GenInfo names={name}/>
+        <GenInfo cities={city}/>
+        <GenInfo dborn={born}/>
+        <GenInfo mails={mail}/>
+        <GenInfo phones={phone}/>
+
+
+
       </div>
     )
   }
