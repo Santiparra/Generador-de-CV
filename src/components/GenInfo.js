@@ -42,6 +42,8 @@ class GenInfo extends Component {
                         id="born"/>
                     </div>
                     <button className="sendBtn">Enviar</button>
+                    <button className="editBtn">Editar</button>
+                    <button className="delBtn">Borrar</button>
                 </form>
             </div>
         

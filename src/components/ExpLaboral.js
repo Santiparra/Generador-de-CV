@@ -43,7 +43,7 @@ class WorkExp extends Component {
                     id="tasks" 
                     placeholder="Describa las tareas de su cargo aquí"></textarea>  
                 </div>
-                    <button className="sendBtn">Enviar</button>
+                    <button className="sendBtn">Enviar</button>                    
                 </form>
             </div>
         )

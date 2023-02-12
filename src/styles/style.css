@@ -7,6 +7,9 @@
     --inputBox-color: #f5f5f5;
     --label-text-color: #f5f5f5;
     --button-color: #14b8a6;
+	--button-color-2: #fcd34d;
+	--button-color-3: #f87171;
+
 }
 
 * {
@@ -97,9 +100,7 @@ label {
 	visibility: visible;
 }
 
-.form .sendBtn {
-	background-color: var(--button-color);
-	border: 2px solid var(--button-color);
+button {
 	border-radius: 4px;
 	color: #fff;
 	display: block;
@@ -109,4 +110,19 @@ label {
 	margin-top: 20px;
 	width: 100%;
     cursor: pointer;
+}
+
+.sendBtn {
+	background-color: var(--button-color);
+	border: 2px solid var(--button-color);	
+}
+
+.editBtn {
+	background-color: var(--button-color-2);
+	border: 2px solid var(--button-color-2);
+}
+
+.delBtn {
+	background-color: var(--button-color-3);
+	border: 2px solid var(--button-color-3);
 }
