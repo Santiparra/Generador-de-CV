@@ -1,7 +1,8 @@
 import { Component } from 'react';
-import Education from './components/Educacion';
-import GenInfo from './components/GenInfo';
-import WorkExp from "./components/ExpLaboral"
+/* import Header from './components/Header'; */
+import Main from './components/Main';
+/* import Footer from './components/Footer'; */
+
 import "./styles/style.css";
 
 class App extends Component {
@@ -13,9 +14,9 @@ class App extends Component {
   render() {
     return(
       <>
-        <GenInfo />
-        <Education />
-        <WorkExp />
+        
+        <Main />
+        
       </>
     )
   }
