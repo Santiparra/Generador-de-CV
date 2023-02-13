@@ -1,7 +1,7 @@
 import { Component } from 'react';
-/* import Header from './components/Header'; */
+import Header from './components/Header';
 import Main from './components/Main';
-/* import Footer from './components/Footer'; */
+import Footer from './components/Footer'; 
 
 import "./styles/style.css";
 
@@ -14,9 +14,9 @@ class App extends Component {
   render() {
     return(
       <>
-        
+        <Header/>
         <Main />
-        
+        <Footer />
       </>
     )
   }
