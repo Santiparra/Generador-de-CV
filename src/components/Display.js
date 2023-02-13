@@ -1,35 +1,29 @@
 import { Component } from 'react';
+import GenInfoPreview from './GenInfoPreview';
 
 class Display extends Component {
-  /* constructor(props){
+  constructor () {
     super()
-  } */
+    this.state = {
+        name: "Pablo Marmol",
+        email: "unmail@mail.com",
+        city: "Montevideo, Uruguay",
+        phone: "099999999",
+        born: "11-02-1956"
+    }
+    
+}
     render() {      
       return(
        <>
-          <div className="datosPersonales">Datos Personales
-            <div className="name">{this.props.name}</div>
-            <div className="sobreMi">Pienso luego existo</div>
-            <div className="ciudad">{this.props.city}</div>
-            <div className="born">{this.props.born}</div>
-            <div className="phone">{this.props.phone}</div>
-            <div className="mail">{this.props.email}</div>
-          </div>
-          <div className="educacion"> Formacion
-            <div className="fechaIS">2006 </div>
-            <div className="fechaES">2006</div>
-            <div className="grado">achillerato</div>
-            <div className="orientacion">Derecho</div>
-            <div className="institucion">iceo Nº3 Dámaso Antonio Larrañaga</div>
-          </div>
-          <div className="expLaboral"> Experiencia Laboral
-            <div className="fechaIT">Julio 2011</div>
-            <div className="fechaTT">Enero 2022</div>
-            <div className="empresa">{this.props.company}</div>
-            <div className="cargo">Telefonista</div>
-            <div className="tareas">Atención de clientes, gestión de turnos de empleados, gestión de contabilidad diaria en la caja</div>
-          </div>
-       
+       <GenInfoPreview
+                    name={this.name.bind(this)} 
+                    email={this.email} 
+                    city={this.city} 
+                    phone={this.phone} 
+                    born={this.props.born}
+                />
+          
        </>
       )
     } 

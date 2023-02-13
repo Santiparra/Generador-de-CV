@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Display from "./Display";
+import ExpLaboralPreview from "./ExpLaboralPreview";
 
 class WorkExp extends Component {
     constructor() {
@@ -72,8 +72,12 @@ class WorkExp extends Component {
                 </div>
                     <button className="sendBtn">Enviar</button>                    
                 </form>
-                <Display 
+                <ExpLaboralPreview 
                     company={company} 
+                    position={position} 
+                    dateStartedw={dateStartedw}
+                    dateEndedw={dateEndedw}
+                    tasks={tasks}
                 />
             </div>
         )

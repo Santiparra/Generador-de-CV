@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Display from "./Display";
+import GenInfoPreview from "./GenInfoPreview";
 
 class GenInfo extends Component {
     constructor () {
@@ -40,7 +40,6 @@ class GenInfo extends Component {
                         value={this.name}
                         placeholder="Pablo Marmol" 
                         id="name" />
-                        <p>{this.state.name}</p>
                     </div>
                     <div className="form-control">
                         <label htmlFor="username">Email</label>
@@ -49,7 +48,6 @@ class GenInfo extends Component {
                         value={this.email}
                         placeholder="usuario@email.com" 
                         id="email" />
-                        <p>{this.state.email}</p>
                     </div>
                     <div className="form-control">
                         <label htmlFor="city">Ciudad</label>
@@ -79,13 +77,13 @@ class GenInfo extends Component {
                     <button className="editBtn">Editar</button>
                     <button className="delBtn">Borrar</button>
                 </form>
-                <Display 
+                <GenInfoPreview 
                     name={name} 
                     email={email} 
                     city={city} 
                     phone={phone} 
                     born={born}
-                />
+                /> 
             </div>        
         )
     }
