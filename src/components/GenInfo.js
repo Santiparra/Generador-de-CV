@@ -2,31 +2,43 @@ import React, { Component } from "react";
 import GenInfoPreview from "./GenInfoPreview";
 
 class GenInfo extends Component {
-    constructor () {
-        super()
-        this.state = {
-            name: "Pablo Marmol",
-            email: "unmail@mail.com",
-            city: "Montevideo, Uruguay",
-            phone: "099999999",
-            born: "11-02-1956"
-        }
-        
+    constructor (props){
+        super(props)
+            this.state = {
+                name: "Pablo Marmol",
+                email: "unmail@mail.com",
+                city: "Montevideo, Uruguay",
+                phone: "099999999",
+                born: "11-02-1956"
+            }              
     }
 
-    handleChange = (e) => {
-        this.setState({
-           [e.target.id] : e.target.value 
-        });
-      };
-
-    render() {
-         const { name, 
-                email,
-                city,
-                phone,
-                born } = this.state; 
+        handleName = (e) => {
+            this.setState({[e.target.id] : e.target.value });
+            this.props.changeNameVal(this.state.name)
+        }; 
         
+        handleMail = (e) => {
+            this.setState({[e.target.id] : e.target.value });
+            this.props.changeEmailVal(this.state.email)
+        }; 
+
+        handleCity = (e) => {
+            this.setState({[e.target.id] : e.target.value });
+            this.props.changeCityVal(this.state.city)
+        }; 
+        
+        handlePhone = (e) => {
+            this.setState({[e.target.id] : e.target.value });
+            this.props.changePhoneVal(this.state.phone)
+        };   
+
+        handleBorn = (e) => {
+            this.setState({[e.target.id] : e.target.value });
+            this.props.changeBornVal(this.state.born)
+       };  
+
+       render() {
         return (
             <div className="container">
                 <div className="header">
@@ -36,57 +48,41 @@ class GenInfo extends Component {
                     <div className="form-control">
                         <label htmlFor="name">Nombre y apellido</label>
                         <input type="text" 
-                        onChange={this.handleChange}
-                        value={this.name}
+                        onChange={this.handleName}
                         placeholder="Pablo Marmol" 
                         id="name" />
                     </div>
-                    <div className="form-control">
+                     <div className="form-control">
                         <label htmlFor="username">Email</label>
                         <input type="text" 
-                        onChange={this.handleChange}
-                        value={this.email}
+                        onChange={this.handleMail}
                         placeholder="usuario@email.com" 
                         id="email" />
                     </div>
                     <div className="form-control">
                         <label htmlFor="city">Ciudad</label>
                         <input type="text" 
-                        onChange={this.handleChange}
-                        value={this.city}
+                        onChange={this.handleCity}
                         placeholder="Montevideo, Uruguay" 
                         id="city"/>
                     </div>
                     <div className="form-control">
                         <label htmlFor="phone">Número telefónico</label>
-                        <input type="number" 
-                        value={this.phone}
-                        onChange={this.handleChange}
+                        <input type="number"
+                        onChange={this.handlePhone}
                         placeholder="59899999999" 
                         id="phone"/>
                     </div>
                     <div className="form-control">
                         <label htmlFor="born">Fecha de nacimiento</label>
                         <input type="date" 
-                        value={this.born}
-                        onChange={this.handleChange}
+                        onChange={this.handleBorn}
                         placeholder="11-11-1911" 
                         id="born"/>
                     </div>
-                    <button className="sendBtn">Enviar</button>
-                    <button className="editBtn">Editar</button>
-                    <button className="delBtn">Borrar</button>
                 </form>
-                <GenInfoPreview 
-                    name={name} 
-                    email={email} 
-                    city={city} 
-                    phone={phone} 
-                    born={born}
-                /> 
             </div>        
         )
-    }
 }
-
+}
 export default GenInfo;

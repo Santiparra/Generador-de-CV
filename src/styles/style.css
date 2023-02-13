@@ -16,12 +16,6 @@
 	box-sizing: border-box;
 }
 
-.datosPersonales {
-	position: absolute;
-	top: 0;
-	left: 50%;
-}
-
 body {
 	background-color: var(--form-header-background);
 	font-family: 'Open Sans', sans-serif;

@@ -13,7 +13,7 @@ class Forms extends Component {
       return(
         <>
           <GenInfo />
-          <Education />
+          <Educacion />
           <WorkExp />
         </>
       )
