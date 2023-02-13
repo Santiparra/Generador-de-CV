@@ -9,7 +9,7 @@
     --button-color: #14b8a6;
 	--button-color-2: #fcd34d;
 	--button-color-3: #f87171;
-
+	--header-font: 'JelleeBold';
 }
 
 * {
@@ -19,11 +19,28 @@
 body {
 	background-color: var(--form-header-background);
 	font-family: 'Open Sans', sans-serif;
-	/* display: flex;
-	align-items: center;
-	justify-content: center; */
 	min-height: 100vh;
 	margin: 0;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.pageHeader {
+	font-family: var(--header-font);
+	color: var(--inputBox-color);
+	font-weight: 700;
+	font-size: 2em;
+}
+
+.content {
+	width: 21cm;
+	height: 29.7cm;
+	background-color: var(--inputBox-color);
 }
 
 .container {
@@ -125,4 +142,17 @@ button {
 .delBtn {
 	background-color: var(--button-color-3);
 	border: 2px solid var(--button-color-3);
+}
+
+.pageFooter {
+	color: var(--inputBox-color);
+	font-style: italic;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.footer-img {
+	height: 2em;
+	width: 2em;
 }
