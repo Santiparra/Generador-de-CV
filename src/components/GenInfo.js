@@ -1,88 +1,71 @@
-import React, { Component } from "react";
-import GenInfoPreview from "./GenInfoPreview";
+import React from "react";
 
-class GenInfo extends Component {
-    constructor (props){
-        super(props)
-            this.state = {
-                name: "Pablo Marmol",
-                email: "unmail@mail.com",
-                city: "Montevideo, Uruguay",
-                phone: "099999999",
-                born: "11-02-1956"
-            }              
-    }
-
-        handleName = (e) => {
-            this.setState({[e.target.id] : e.target.value });
-            this.props.changeNameVal(this.state.name)
-        }; 
+function GenInfo (props) {
+      
+    const handleName = (e) => {
+        props.setName(e.target.value)
+    }; 
         
-        handleMail = (e) => {
-            this.setState({[e.target.id] : e.target.value });
-            this.props.changeEmailVal(this.state.email)
-        }; 
+    const handleMail = (e) => {
+        props.setEmail(e.target.value)
+    }; 
 
-        handleCity = (e) => {
-            this.setState({[e.target.id] : e.target.value });
-            this.props.changeCityVal(this.state.city)
-        }; 
+    const handleCity = (e) => {
+        props.setCity(e.target.value)
+    }; 
         
-        handlePhone = (e) => {
-            this.setState({[e.target.id] : e.target.value });
-            this.props.changePhoneVal(this.state.phone)
-        };   
+    const handlePhone = (e) => {
+        props.setPhone(e.target.value)
+    };   
 
-        handleBorn = (e) => {
-            this.setState({[e.target.id] : e.target.value });
-            this.props.changeBornVal(this.state.born)
-       };  
+    const handleBorn = (e) => {
+        props.setBorn(e.target.value)
+    };  
 
-       render() {
-        return (
-            <div className="container">
-                <div className="header">
-                    <h2>Información Básica</h2>
+    return (
+        <div className="container">
+            <div className="header">
+                <h2>Información Básica</h2>
+            </div>
+            <form id="form" className="form">
+                <div className="form-control">
+                    <label htmlFor="name">Nombre y apellido</label>
+                    <input type="text" 
+                    onChange={handleName}
+                    placeholder="Pablo Marmol" 
+                    id="name" />
                 </div>
-                <form id="form" className="form">
-                    <div className="form-control">
-                        <label htmlFor="name">Nombre y apellido</label>
-                        <input type="text" 
-                        onChange={this.handleName}
-                        placeholder="Pablo Marmol" 
-                        id="name" />
-                    </div>
-                     <div className="form-control">
-                        <label htmlFor="username">Email</label>
-                        <input type="text" 
-                        onChange={this.handleMail}
-                        placeholder="usuario@email.com" 
-                        id="email" />
-                    </div>
-                    <div className="form-control">
-                        <label htmlFor="city">Ciudad</label>
-                        <input type="text" 
-                        onChange={this.handleCity}
-                        placeholder="Montevideo, Uruguay" 
-                        id="city"/>
-                    </div>
-                    <div className="form-control">
-                        <label htmlFor="phone">Número telefónico</label>
-                        <input type="number"
-                        onChange={this.handlePhone}
-                        placeholder="59899999999" 
-                        id="phone"/>
-                    </div>
-                    <div className="form-control">
-                        <label htmlFor="born">Fecha de nacimiento</label>
-                        <input type="date" 
-                        onChange={this.handleBorn}
-                        placeholder="11-11-1911" 
-                        id="born"/>
-                    </div>
-                </form>
-            </div>        
-        )
+                <div className="form-control">
+                    <label htmlFor="username">Email</label>
+                    <input type="text" 
+                    onChange={handleMail}
+                    placeholder="usuario@email.com" 
+                    id="email" />
+                </div>
+                <div className="form-control">
+                    <label htmlFor="city">Ciudad</label>
+                    <input type="text" 
+                    onChange={handleCity}
+                    placeholder="Montevideo, Uruguay" 
+                    id="city"/>
+                </div>
+                <div className="form-control">
+                    <label htmlFor="phone">Número telefónico</label>
+                    <input type="number"
+                    onChange={handlePhone}
+                    placeholder="59899999999" 
+                    id="phone"/>
+                </div>
+                <div className="form-control">
+                    <label htmlFor="born">Fecha de nacimiento</label>
+                    <input type="date" 
+                    onChange={handleBorn}
+                    placeholder="11-11-1911" 
+                    id="born"/>
+                </div> 
+            </form>
+        </div>        
+    )
 }
-}
+
 export default GenInfo;
