@@ -22,6 +22,10 @@ function GenInfo (props) {
         props.setBorn(e.target.value)
     };  
 
+    const handleDescription = (e) => {
+        props.setDescription(e.target.value)
+    }; 
+
     return (
         <div className="container">
             <div className="header">
@@ -63,6 +67,15 @@ function GenInfo (props) {
                     placeholder="11-11-1911" 
                     id="born"/>
                 </div> 
+                <div className="form-control">
+                    <textarea name="description" 
+                    onChange={handleDescription} 
+                    className="description" 
+                    cols="33" 
+                    rows="5" 
+                    id="description" 
+                    placeholder="Sobre mi: puede hablar sobre Ud. aquí"></textarea>  
+                </div>
             </form>
         </div>        
     )

@@ -3,37 +3,59 @@ import React from "react";
 function Display (props) {
   
       return(      
-        <>
-            <div className="datosPersonales">Datos Personales
-              <div className="name">{props.name}</div>
-              <div className="sobreMi">Pienso luego existo</div>
-              <div className="ciudad">{props.city}</div>
-              <div className="born">{props.born}</div>
-              <div className="phone">{props.phone}</div>
-              <div className="mail">{props.email}</div>
+        <div className="display">
+            <div className="datosPersonales">
+              <div className="cvHeader">
+                 <div className="name">{props.name}</div>                 
+              </div>
+              <div className="aboutMe">
+              Sobre mi: <p className="description">{props.description}</p>
+              </div>
+              <div className="ciudad">
+              Lugar de residencia:
+              <p className="description">{props.city}</p></div>
+              <div className="born">
+              Fecha de nacimiento:
+              <p className="description">{props.born}</p></div>
+              <div className="phone">
+              Número telefónico:
+              <p className="description">{props.phone}</p></div>
+              <div className="mail">
+              Email:
+              <p className="description">{props.email}</p></div>              
             </div> 
-            <ul>
+            <ul className="employment"> 
+            <div className="sectionTitle">
+            Experiencia Laboral              
+            </div>
               {props.works.map(work => ( 
-                <li key={work.id}>
-                {work.value.position}
-                {work.value.dateStartedw}
-                {work.value.dateEndedw}
-                {work.value.company}
-                {work.value.tasks}
-                </li>
+                <li key={work.id}>                
+                  <p className="arrTittle">{work.value.position}</p>
+                  <div className="dates">
+                    <p className="arrText">{work.value.dateStartedw}</p>
+                    <p className="arrText">{work.value.dateEndedw}</p>
+                  </div>
+                    <p className="arrText">{work.value.company}</p>
+                    <p className="arrText">{work.value.tasks}</p>
+                </li>                
               ))}
             </ul> 
-            <ul>
+            <ul className="studies"> 
+            <div className="sectionTitle"> 
+            Formación
+            </div>
               {props.studies.map(study => ( 
                 <li key={study.id}>
-                {study.value.tittle}
-                {study.value.school}
-                {study.value.dateStarted}
-                {study.value.dateEnded}
+                  <p className="arrTittle">{study.value.tittle}</p>
+                  <div className="dates">
+                    <p className="arrText">{study.value.dateStarted}</p>
+                    <p className="arrText">{study.value.dateEnded}</p>
+                  </div>
+                  <p className="arrText">{study.value.school}</p>                  
                 </li>
               ))}
             </ul>       
-         </>
+         </div>
   )
 } 
 
