@@ -27,15 +27,14 @@ function Main () {
           setBorn={setBorn}
           setDescription={setDescription}
         />
-      
-        <Education
-          setStudies={setStudies}
-          studies={studies}
-        />
         <WorkExp 
           works={works}
           setWorks={setWorks}
         />
+        <Education
+          setStudies={setStudies}
+          studies={studies}
+        />        
       </div>
       <Display 
         name={name}
