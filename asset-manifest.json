@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Generador-de-CV/static/css/main.6b58f7f7.css",
+    "main.js": "/Generador-de-CV/static/js/main.a157d4f2.js",
+    "static/media/github-mark-white.svg": "/Generador-de-CV/static/media/github-mark-white.97ed8e7eef60d61ca469881dd6f34511.svg",
+    "index.html": "/Generador-de-CV/index.html",
+    "main.6b58f7f7.css.map": "/Generador-de-CV/static/css/main.6b58f7f7.css.map",
+    "main.a157d4f2.js.map": "/Generador-de-CV/static/js/main.a157d4f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b58f7f7.css",
+    "static/js/main.a157d4f2.js"
+  ]
+}
